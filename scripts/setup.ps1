@@ -4,7 +4,7 @@ param (
   [switch]$InstallCUDA = $false
 )
 
-Import-Module -Name $PSScriptRoot/utils.psm1 -Force
+Import-Module -Name $PSScriptRoot/../CCM/utils.psm1 -Force
 
 if ($null -eq (Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
   # Download and install Chocolatey
@@ -33,9 +33,9 @@ else {
 }
 
 if ($CUDAisAvailable) {
-  & $PSScriptRoot/../build.ps1 -UseVCPKG -ForceLocalVCPKG -EnableOPENCV -EnableCUDA -DisableInteractive -DoNotUpdateTOOL
-  #& $PSScriptRoot/../build.ps1 -UseVCPKG -EnableOPENCV -EnableCUDA -EnableOPENCV_CUDA  -DisableInteractive -DoNotUpdateTOOL
+  & $PSScriptRoot/../CCM/build.ps1 -UseVCPKG -ForceLocalVCPKG -EnableOPENCV -EnableCUDA -DisableInteractive -DoNotUpdateTOOL
+  #& $PSScriptRoot/../CCM/build.ps1 -UseVCPKG -EnableOPENCV -EnableCUDA -EnableOPENCV_CUDA  -DisableInteractive -DoNotUpdateTOOL
 }
 else {
-  & $PSScriptRoot/../build.ps1 -UseVCPKG -EnableOPENCV -DisableInteractive -DoNotUpdateTOOL
+  & $PSScriptRoot/../CCM/build.ps1 -UseVCPKG -EnableOPENCV -DisableInteractive -DoNotUpdateTOOL
 }
