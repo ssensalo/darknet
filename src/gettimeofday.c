@@ -40,4 +40,4 @@ int clock_gettime(int dummy, struct timespec* ct)
 
     return 0;
 }
-#endif
+#endif  // _MSC_VER

@@ -117,6 +117,7 @@ jobs:
         mono $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -180,6 +181,7 @@ jobs:
         mono $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -221,6 +223,7 @@ jobs:
         mono $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -357,6 +360,7 @@ jobs:
         mono $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -395,6 +399,7 @@ jobs:
         mono $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -475,6 +480,7 @@ jobs:
         $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -485,6 +491,9 @@ jobs:
         $(./vcpkg/vcpkg fetch nuget | tail -n 1)
         setapikey ${{ secrets.BAGET_API_KEY }}
         -Source http://93.49.111.10:5555/v3/index.json
+
+    - name: Install NSIS
+      run: winget install --id NSIS.NSIS --accept-source-agreements --accept-package-agreements
 
     - name: 'Build'
       shell: pwsh
@@ -517,6 +526,7 @@ jobs:
         $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -571,6 +581,7 @@ jobs:
         $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
@@ -602,6 +613,7 @@ jobs:
         $(./vcpkg/vcpkg fetch nuget | tail -n 1) sources add
         -Name "vcpkgbinarycache"
         -Source http://93.49.111.10:5555/v3/index.json
+        -AllowInsecureConnections
 
     - name: Setup NuGet API key if found
       shell: bash
